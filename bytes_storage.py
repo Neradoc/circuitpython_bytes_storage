@@ -90,6 +90,6 @@ def _test():
     import alarm
     import microcontroller
     data = {"name": "nvm_helper", "num": 92, "float": 3.14}
-    storage = ByteArrayStorage(bytearray(1024))
-    storage.save(data)
-    print(storage.load())
+    store = ByteArrayStorage(bytearray(1024))
+    store.save(data)
+    print(store.load())

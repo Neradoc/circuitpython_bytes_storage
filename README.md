@@ -22,19 +22,19 @@ from bytes_storage import *
 # Example data
 data = {"name": "nvm_helper", "num": 92, "float": 3.14}
 
-storage = NVMStorage()
-storage.save(data)
-print(storage.load())
+store = NVMStorage()
+store.save(data)
+print(store.load())
 ```
 
 ```py
-storage = ByteArrayStorage(1024)
-storage.save(data)
-print(storage.load())
+store = ByteArrayStorage(1024)
+store.save(data)
+print(store.load())
 ```
 
 ```py
-storage = SleepMemoryStorage()
-storage.save(data)
-print(storage.load())
+store = SleepMemoryStorage()
+store.save(data)
+print(store.load())
 ```

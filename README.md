@@ -1,7 +1,7 @@
 Small helper to save structured data into a bytearray like NVM or alarm memory.
 Simply swap the class for the type of storage you want to use.
 
-`ByteStorage`: Any object compatible with the bytearray interface can be used, like some external EEPROM libraries.
+`ByteStorage`: An object compatible with the bytearray interface can be used, like some external EEPROM libraries. For example the [24LC32 I2C EEPROM](https://github.com/adafruit/Adafruit_CircuitPython_24LC32).
 
 `NVMStorage`: NVM (non volatile memory) is implemented with `microcontroller.nvm` and stored in flash. It is not erased when the board is reset and can be used to store settings. Be careful not to get your code in a loop that writes quickly multiple times, as flash memory is rated for a limited number of erase/write cycles, typically in the 150 000 for the chips used with Circuitpython boards, which is a lot for normal use.
 

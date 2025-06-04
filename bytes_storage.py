@@ -25,7 +25,7 @@ class ByteStorage:
         self.storage[self.offset:self.offset+8] = length.to_bytes(8, "big")
         self.storage[self.offset+8:self.offset+8+length] = packed_data_io.getvalue()
 
-    def read(self):
+    def load(self):
         length_s = self.storage[self.offset:self.offset+8]
         length = int.from_bytes(length_s, "big")
 
@@ -66,7 +66,7 @@ class FileStorage():
         with open(self.file, "wb") as fp:
             fp.write(packed_data_io.getvalue())
 
-    def read(self):
+    def load(self):
         try:
             with open(self.file, "rb") as fp:
                 data_s = fp.read()
@@ -92,4 +92,4 @@ def _test():
     data = {"name": "nvm_helper", "num": 92, "float": 3.14}
     storage = ByteArrayStorage(bytearray(1024))
     storage.save(data)
-    print(storage.read())
+    print(storage.load())

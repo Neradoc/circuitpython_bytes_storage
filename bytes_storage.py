@@ -36,7 +36,7 @@ class ByteStorage:
         try:
             data = msgpack.unpack(BytesIO(data_s))
             return data
-        except ValueError:
+        except (ValueError, EOFError):
             return None
 
     def __len__(self):
